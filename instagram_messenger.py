@@ -15,8 +15,7 @@ message = input()
 
 browser = webdriver.Chrome()
 browser.get("https://www.instagram.com/")
-
-def Message(user_name,pass_word,chat,message):
+def Login(user_name,pass_word):
 
     username = WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[name='username'")))
     password = WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[name='password'")))
@@ -28,6 +27,9 @@ def Message(user_name,pass_word,chat,message):
     login = WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button[type='submit'"))).click()
     notnow = WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Not Now')]"))).click()
     notnow2 = WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Not Now')]"))).click()
+
+
+def Message(chat,message):
 
     messenger = WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="react-root"]/section/nav/div[2]/div/div/div[3]/div/div[2]/a'))).click()
     newmsg = WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="react-root"]/section/div/div[2]/div/div/div[1]/div[1]/div/div[3]/button'))).click()
@@ -43,4 +45,5 @@ def Message(user_name,pass_word,chat,message):
     time.sleep(1)
     text_area.send_keys(Keys.ENTER)
 
-Message(user_name,pass_word,chat,message)
+Login(user_name,pass_word)
+Message(chat,message)
