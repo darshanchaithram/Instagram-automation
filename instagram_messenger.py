@@ -5,20 +5,20 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 import time
 
-user_name = "//ENTER YOUR IG USERNAME//"
-pass_word = "//ENTER YOUR IG PASSWORD//"
+user_name = "//ENTER YOUR IG USERNAME//"        #enter username to login to your instagram account
+pass_word = "//ENTER YOUR IG PASSWORD//"        #enter password to login to your instagram account
 
-print('Enter chat:')
+print('Enter chat:')                            #enter the chat to whom you want to message (This is done during runtime)
 chat = input()
-print("Enter message:")
+print("Enter message:")                         #enter the message you want to send (This is done during runtime)
 message = input()
 
-browser = webdriver.Chrome()
+browser = webdriver.Chrome()                    #calling your webbrowser. You can also use other browsers like Firefox or Edge
 browser.get("https://www.instagram.com/")
 def Login(user_name,pass_word):
 
-    username = WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[name='username'")))
-    password = WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[name='password'")))
+    username = WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[name='username'")))     #browser is made to wait to ensure that the username block is clickable
+    password = WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[name='password'")))     #browser is made to wait to ensure that the password block is clickable
     username.clear()
     password.clear()
     username.send_keys(user_name)
