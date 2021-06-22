@@ -12,3 +12,8 @@ You can use this code to send instagram messages to someone using python.
 This python file contains two functions: login() and message().
 - Login function is used to log in to instagram.com with your given credentials and to ward off unwanted notifications and popups that arise.
 - Message function texts the message you just provided to the username you gave before.
+
+##Libraries Used
+- Time: Inbuilt python library
+- Selenium: You can install selenium in your system/virtual environment using the command >>> pip install selenium
+
