@@ -17,3 +17,5 @@ This python file contains two functions: login() and message().
 - Time: Inbuilt python library
 - Selenium: You can install selenium in your system/virtual environment using the command >>> pip install selenium
 
+
+--------- In case of any querries you can ping me: darshanchathram@gmail.com ---------
